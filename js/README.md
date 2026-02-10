@@ -104,7 +104,33 @@ node example_tts_stream_timestamps.js
 
 **Output:** `synthesis_stream_timestamps_output.wav`
 
-### 7. WebSocket TTS Synthesis (`example_websocket.js`)
+### 7. Low-Latency HTTP Streaming (`example_tts_low_latency_http.js`)
+
+Achieves the lowest TTFB with HTTP streaming by warming up the TCP+TLS connection before timing synthesis.
+
+**Usage:**
+```bash
+npm run tts-low-latency-http
+# or
+node example_tts_low_latency_http.js
+```
+
+**Output:** TTFB (ms), total time (ms), and audio bytes.
+
+### 8. Low-Latency WebSocket (`example_tts_low_latency_ws.js`)
+
+Achieves the lowest TTFB with WebSocket by pre-establishing the connection and audio context before timing synthesis.
+
+**Usage:**
+```bash
+npm run tts-low-latency-ws
+# or
+node example_tts_low_latency_ws.js
+```
+
+**Output:** TTFB (ms), total time (ms), and audio bytes.
+
+### 9. WebSocket TTS Synthesis (`example_websocket.js`)
 
 Demonstrates WebSocket-based TTS synthesis with context management.
 
@@ -118,7 +144,7 @@ node example_websocket.js
 
 **Output:** `synthesis_websocket_output.wav`
 
-### 8. Voice Cloning (`example_voice_clone.js`)
+### 10. Voice Cloning (`example_voice_clone.js`)
 
 Demonstrates how to clone a voice using audio samples via the Inworld Voice API.
 

@@ -117,7 +117,41 @@ python example_tts_stream_timestamps.py
 
 ---
 
-### 7. `example_websocket.py` - WebSocket Synthesis
+### 7. `example_tts_low_latency_http.py` - Low-Latency HTTP Streaming
+**Purpose:** Achieve the lowest TTFB with HTTP streaming using connection warmup.
+
+**Features:**
+- Persistent session to pre-establish TCP+TLS before timing
+- Measures TTFB and total synthesis time on a warm connection
+- Reports latency in milliseconds
+
+**Usage:**
+```bash
+python example_tts_low_latency_http.py
+```
+
+**Best for:** Low-latency HTTP integration, benchmarking streaming TTFB.
+
+---
+
+### 8. `example_tts_low_latency_ws.py` - Low-Latency WebSocket
+**Purpose:** Achieve the lowest TTFB with WebSocket using context pre-creation.
+
+**Features:**
+- Pre-establishes WebSocket connection and audio context before timing
+- Measures TTFB from text submission to first audio chunk only
+- Sends text with flush and close for immediate synthesis
+
+**Usage:**
+```bash
+python example_tts_low_latency_ws.py
+```
+
+**Best for:** Low-latency WebSocket integration, real-time voice applications.
+
+---
+
+### 9. `example_websocket.py` - WebSocket Synthesis
 **Purpose:** Real-time TTS synthesis using WebSocket connections.
 
 **Features:**
@@ -136,7 +170,7 @@ python example_websocket.py
 
 ---
 
-### 8. `tts_cli.py` - Command Line Interface
+### 10. `tts_cli.py` - Command Line Interface
 **Purpose:** Comprehensive CLI tool for TTS testing and batch processing.
 
 **Features:**
@@ -172,7 +206,7 @@ python tts_cli.py --output-file output.wav --voice-id Dennis --model-id inworld-
 
 ---
 
-### 9. `example_voice_clone.py` - Voice Cloning
+### 11. `example_voice_clone.py` - Voice Cloning
 **Purpose:** Clone a voice using audio samples via the Inworld Voice API.
 
 **Features:**
